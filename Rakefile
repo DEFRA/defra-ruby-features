@@ -18,14 +18,23 @@ end
 
 load "rails/tasks/statistics.rake"
 
+Bundler::GemHelper.install_tasks
+
+Dir[File.join(File.dirname(__FILE__), "lib/tasks/**/*.rake")].each { |f| load f }
+
 require "bundler/gem_tasks"
 
 require "rake/testtask"
 
-Rake::TestTask.new(:test) do |t|
-  t.libs << "test"
-  t.pattern = "test/**/*_test.rb"
-  t.verbose = false
-end
+# This is wrapped to prevent an error when rake is called in environments where
+# rspec may not be available, e.g. production. As such we don't need to handle
+# the error.
+begin
+  require "rspec/core/rake_task"
 
-task default: :test
+  RSpec::Core::RakeTask.new(:spec)
+
+  task default: :spec
+rescue LoadError
+  # no rspec available
+end

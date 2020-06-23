@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-require "defra_ruby_mocks"
+require "defra_ruby_features"
 
-DefraRubyMocks.configure do |config|
+DefraRubyFeatures.configure do |config|
   config.feature_toggle_model = FeatureToggle
 end

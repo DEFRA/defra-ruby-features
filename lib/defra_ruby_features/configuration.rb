@@ -2,6 +2,6 @@
 
 module DefraRubyFeatures
   class Configuration
-    attr_acessor :feature_toggle_model
+    attr_accessor :feature_toggle_model
   end
 end
