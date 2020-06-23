@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "defra/ruby/features/engine"
 
 module Defra

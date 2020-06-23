@@ -1,4 +1,6 @@
-$:.push File.expand_path("lib", __dir__)
+# frozen_string_literal: true
+
+$LOAD_PATH.push File.expand_path("lib", __dir__)
 
 # Maintain your gem's version:
 require "defra/ruby/features/version"
@@ -11,7 +13,7 @@ Gem::Specification.new do |spec|
   spec.email       = ["alan.cruikshanks@environment-agency.gov.uk"]
   spec.homepage    = "https://github.com/DEFRA/defra-ruby-features"
   spec.summary     = "Defra Ruby on Rails features manager engine"
-  spec.description = "A Rails engine which can be used to activate and deactivate feature toggles when loaded into an application"
+  spec.description = "A Rails engine which can be used to activate and deactivate feature toggles"
   spec.license     = "The Open Government Licence (OGL) Version 3"
 
   spec.test_files = Dir["spec/**/*"]
