@@ -1,1 +1,1 @@
-//= link_directory ../stylesheets/defra/ruby/features .css
+//= link_directory ../stylesheets/defra_ruby_features .css

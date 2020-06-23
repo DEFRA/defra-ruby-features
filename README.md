@@ -1,4 +1,4 @@
-# Defra::Ruby::Features
+# DefraRubyFeatures
 Short description and motivation.
 
 ## Usage

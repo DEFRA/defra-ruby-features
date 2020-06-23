@@ -3,12 +3,12 @@
 $LOAD_PATH.push File.expand_path("lib", __dir__)
 
 # Maintain your gem's version:
-require "defra/ruby/features/version"
+require "defra_ruby_features/version"
 
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |spec|
   spec.name        = "defra-ruby-features"
-  spec.version     = Defra::Ruby::Features::VERSION
+  spec.version     = DefraRubyFeatures::VERSION
   spec.authors     = ["Defra"]
   spec.email       = ["alan.cruikshanks@environment-agency.gov.uk"]
   spec.homepage    = "https://github.com/DEFRA/defra-ruby-features"
