@@ -15,3 +15,13 @@ gemspec
 
 # To use a debugger
 # gem 'byebug', group: [:development, :test]
+
+# Use CanCanCan for user roles and permissions
+# Version 2.0 doesn't support Mongoid, so we're locked to an earlier one
+gem "cancancan", "~> 1.10"
+
+# Use Devise for user authentication
+gem "devise", ">= 4.4.3"
+
+# Use sqlite when running tests
+gem "sqlite3"
