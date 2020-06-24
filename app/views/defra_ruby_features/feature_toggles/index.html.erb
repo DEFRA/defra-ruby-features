@@ -1,0 +1,40 @@
+<div class="text">
+  <h1 class="heading-large"><%= t(".heading") %></h1>
+
+  <table>
+    <thead>
+      <tr>
+        <th scope="col"><%= t(".table.key") %></th>
+        <th scope="col"><%= t(".table.status") %></th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @feature_toggles.each do |feature_toggle| %>
+        <tr>
+          <td><%= feature_toggle.key %></th>
+          <td>
+            <span class="<%= feature_toggle.active ? "green_tag" : "red_tag" %>">
+              <%= feature_toggle.active %>
+            </span>
+          </td>
+
+          <td>
+            <ul class="list">
+              <li>
+                <% form_for feature_toggle do |f| %>
+                  <%= f.hidden_field :active, value: !feature_toggle.active %>
+                  <%= f.submit t(".actions.toggle") %>
+                <% end %>
+              </li>
+              <li>
+                <%= link_to t(".actions.delete"), { action: :destroy, id: feature_toggle.id }, method: :delete %>
+              </li>
+            </ul>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

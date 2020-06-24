@@ -4,6 +4,6 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
-    can :manage, DefraRubyFeatures::FeatureToggle
+    can :manage, FeatureToggle
   end
 end

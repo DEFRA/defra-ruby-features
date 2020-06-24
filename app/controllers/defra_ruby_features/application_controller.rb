@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module DefraRubyFeatures
-  class ApplicationController < ActionController::Base
-    protect_from_forgery with: :exception
+  class ApplicationController < ::ApplicationController
+
   end
 end

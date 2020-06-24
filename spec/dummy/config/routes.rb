@@ -2,5 +2,6 @@
 
 Rails.application.routes.draw do
   devise_for :users
-  mount DefraRubyFeatures::Engine => "/defra-ruby-features"
+
+  mount DefraRubyFeatures::Engine => "/"
 end
