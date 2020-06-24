@@ -25,3 +25,9 @@ gem "devise", ">= 4.4.3"
 
 # Use sqlite when running tests
 gem "sqlite3"
+
+group :test do
+  gem "database_cleaner"
+  gem "factory_bot_rails", require: false
+  gem "rails-controller-testing"
+end
