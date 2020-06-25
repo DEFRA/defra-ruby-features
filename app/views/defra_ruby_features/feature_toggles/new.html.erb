@@ -1,0 +1,35 @@
+<div class="grid-row">
+  <div class="column-two-thirds">
+    <%= render("shared/back", back_path: feature_toggles_path) %>
+
+    <%= form_for(@feature_toggle) do |f| %>
+      <h1 class="heading-large">
+        <%= t(".heading") %>
+      </h1>
+
+      <div class="form-group <%= "form-group-error" if @feature_toggle.errors[:key].any? %>">
+        <% if @feature_toggle.errors[:key].any? %>
+          <span class="error-message"><%= @feature_toggle.errors[:key].join(", ") %></span>
+        <% end %>
+
+        <%= f.label :key, t(".fields.key"), class: "form-label" %>
+        <%= f.text_field :key, class: "form-control" %>
+      </div>
+
+      <div class="form-group <%= "form-group-error" if @feature_toggle.errors[:active].any? %>">
+        <% if @feature_toggle.errors[:key].any? %>
+          <span class="error-message"><%= @feature_toggle.errors[:key].join(", ") %></span>
+        <% end %>
+
+        <div class="multiple-choice">
+          <%= f.check_box :active %>
+          <%= f.label :active, t(".fields.active") %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.submit t(".submit"), class: "button" %>
+      </div>
+    <% end %>
+  </div>
+</div>

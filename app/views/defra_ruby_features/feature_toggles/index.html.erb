@@ -1,6 +1,8 @@
 <div class="text">
   <h1 class="heading-large"><%= t(".heading") %></h1>
 
+  <%= link_to t(".new"), new_feature_toggle_path, class: "button" %>
+
   <table>
     <thead>
       <tr>
@@ -37,4 +39,6 @@
       <% end %>
     </tbody>
   </table>
+
+  <%= link_to t(".new"), new_feature_toggle_path, class: "button" %>
 </div>

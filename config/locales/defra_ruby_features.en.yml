@@ -1,0 +1,21 @@
+en:
+  defra_ruby_features:
+    feature_toggles:
+      index:
+        heading: "Feature Toggles"
+        new: "New"
+        table:
+          key: "Name"
+          status: "Status"
+        actions:
+          toggle: "Toggle"
+          delete: "Delete"
+      new:
+        heading: "Add a new Feature Toggle"
+        fields:
+          key: "Name"
+          active: "Active"
+        submit: "Save"
+  shared:
+    back:
+      back_link: "Back"

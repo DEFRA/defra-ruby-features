@@ -6,20 +6,35 @@ module DefraRubyFeatures
     before_action :authorize_user!
 
     def index
-      @feature_toggles = FeatureToggle.order(:key).all
+      if model.respond_to?(:order)
+        @feature_toggles = model.order(key: "ASC")
+      else
+        @feature_toggles = model.order_by(key: "ASC").all
+      end
     end
 
     def create
-      @feature_toggles.create!(feature_toggles_params)
+      model.create!(feature_toggles_params)
+
+      redirect_to feature_toggles_path
     end
 
     def new
+      @feature_toggle = model.new
     end
 
     private
 
     def authorize_user!
-      authorize! :manage, FeatureToggle
+      authorize! :manage, model
+    end
+
+    def model
+      DefraRubyFeatures.configuration.feature_toggle_model
+    end
+
+    def feature_toggles_params
+      params.fetch(:feature_toggles, {}).permit(:key, :active)
     end
   end
 end
