@@ -1,9 +1,9 @@
 # Defra Ruby Features
 
-[![Build Status](https://travis-ci.com/DEFRA/defra-ruby-features.svg?branch=master)](https://travis-ci.com/DEFRA/defra-ruby-features)
+[![Build Status](https://travis-ci.com/DEFRA/defra-ruby-features.svg?branch=main)](https://travis-ci.com/DEFRA/defra-ruby-features)
 [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=DEFRA_defra-ruby-features&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=DEFRA_defra-ruby-features)
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=DEFRA_defra-ruby-features&metric=coverage)](https://sonarcloud.io/dashboard?id=DEFRA_defra-ruby-features)
-[![security](https://hakiri.io/github/DEFRA/defra-ruby-features/master.svg)](https://hakiri.io/github/DEFRA/defra-ruby-features/master)
+[![security](https://hakiri.io/github/DEFRA/defra-ruby-features/main.svg)](https://hakiri.io/github/DEFRA/defra-ruby-features/main)
 [![Licence](https://img.shields.io/badge/Licence-OGLv3-blue.svg)](http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3)
 
 A Rails Engine used by the [Ruby services team](https://github.com/DEFRA/ruby-services-team) in their digital services.
