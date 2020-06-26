@@ -3,5 +3,5 @@
 require "defra_ruby_features"
 
 DefraRubyFeatures.configure do |config|
-  config.feature_toggle_model = FeatureToggle
+  config.feature_toggle_model_name = "FeatureToggle"
 end

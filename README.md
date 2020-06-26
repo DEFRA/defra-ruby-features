@@ -1,41 +1,6 @@
-# DefraRubyFeatures
-Short description and motivation.
-
-## Usage
-How to use my plugin.
-
-## Installation
-Add this line to your application's Gemfile:
-
-```ruby
-gem 'defra-ruby-features'
-```
-
-And then execute:
-```bash
-$ bundle
-```
-
-Or install it yourself as:
-```bash
-$ gem install defra-ruby-features
-```
-
-## Contributing
-Contribution directions go here.
-
-## License
-The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
-
-
-
-
-
-
-
 # Defra Ruby Features
 
-[![Build Status](https://travis-ci.com/DEFRA/defra-ruby-mocks.svg?branch=master)](https://travis-ci.com/DEFRA/defra-ruby-features)
+[![Build Status](https://travis-ci.com/DEFRA/defra-ruby-features.svg?branch=master)](https://travis-ci.com/DEFRA/defra-ruby-features)
 [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=DEFRA_defra-ruby-features&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=DEFRA_defra-ruby-features)
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=DEFRA_defra-ruby-features&metric=coverage)](https://sonarcloud.io/dashboard?id=DEFRA_defra-ruby-features)
 [![security](https://hakiri.io/github/DEFRA/defra-ruby-features/master.svg)](https://hakiri.io/github/DEFRA/defra-ruby-features/master)
@@ -45,7 +10,7 @@ A Rails Engine used by the [Ruby services team](https://github.com/DEFRA/ruby-se
 
 We use it to set, update and delete feature toggles on our rails services.
 
-When mounted in an app, it will add additional endpoints to manage feature toggles.
+When mounted in an app, it will add additional endpoints and views to manage feature toggles.
 
 Things to note
 
@@ -73,7 +38,7 @@ Then mount the engine in your routes.rb file:
 
 ```ruby
 Rails.application.routes.draw do
-  mount DefraRubyMocks::Engine => "/defra-ruby-featuress"
+  mount DefraRubyFeatures::Engine => "/defra-ruby-featuress"
 end
 ```
 
@@ -81,41 +46,23 @@ The engine should now be mounted at `/defra-ruby-features` of your project. You 
 
 ## Configuration
 
-For the feature toggles routes to be accessible you'll also need to configure them.
+For the feature toggles to be persisted, you need to create a model class with a `String` attribute called `key` and a `Boolean` attribute named `active`.
+
+*This will work with MongoId models as well as ActiveRecord models.*
+
 
 ```ruby
 # config/initializers/defra_ruby_features.rb
 require "defra_ruby_features"
 
 DefraRubyFeatures.configure do |config|
-  config.feature_toggle_model = FeatureToggle
+  config.feature_toggle_model_name = "FeatureToggle"
 end
 ```
 
-
-
-
-
-
-
-
-## Installation
-
-You don't need to do this if you're just mounting the engine without making any changes.
-
-However, if you want to edit the engine, you'll have to install it locally.
-
-Clone the repo and drop into the project:
-
-```bash
-git clone https://github.com/DEFRA/defra-ruby-mocks.git && cd defra-ruby-mocks
-```
-
-Then install the dependencies with `bundle install`.
-
 ## Testing the engine
 
-The engine is mounted in a dummy Rails 4 app (in /spec/dummy) so we can properly test its behaviour.
+The engine is mounted in a dummy Rails 6 app (in /spec/dummy) so we can properly test its behaviour.
 
 The test suite is written in RSpec.
 

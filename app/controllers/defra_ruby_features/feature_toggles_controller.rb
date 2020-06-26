@@ -14,13 +14,29 @@ module DefraRubyFeatures
     end
 
     def create
-      model.create!(feature_toggles_params)
+      model.create!(feature_toggle_params)
+
+      redirect_to feature_toggles_path
+    end
+
+    def update
+      @feature_toggle = model.find_by(id: params[:id])
+
+      @feature_toggle.update!(feature_toggle_params)
 
       redirect_to feature_toggles_path
     end
 
     def new
       @feature_toggle = model.new
+    end
+
+    def destroy
+      @feature_toggle = model.find_by(id: params[:id])
+
+      @feature_toggle.destroy!
+
+      redirect_to feature_toggles_path
     end
 
     private
@@ -30,11 +46,11 @@ module DefraRubyFeatures
     end
 
     def model
-      DefraRubyFeatures.configuration.feature_toggle_model
+      @_model ||= DefraRubyFeatures.configuration.feature_toggle_model_name.constantize
     end
 
-    def feature_toggles_params
-      params.fetch(:feature_toggles, {}).permit(:key, :active)
+    def feature_toggle_params
+      params.fetch(:feature_toggle, {}).permit(:key, :active)
     end
   end
 end
