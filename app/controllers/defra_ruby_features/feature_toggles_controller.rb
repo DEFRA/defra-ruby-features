@@ -5,6 +5,8 @@ module DefraRubyFeatures
     before_action :authenticate_user!
     before_action :authorize_user!
 
+    helper DeleteLinkHelper
+
     def index
       # MongoId
       @feature_toggles = model.order(key: "ASC") if model.respond_to?(:order)

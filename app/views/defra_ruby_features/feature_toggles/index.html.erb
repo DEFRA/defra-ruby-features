@@ -1,8 +1,6 @@
 <div class="text">
   <h1 class="heading-large"><%= t(".heading") %></h1>
 
-  <%= link_to t(".new"), new_feature_toggle_path, class: "button" %>
-
   <table>
     <thead>
       <tr>
@@ -25,13 +23,17 @@
           <td>
             <ul class="list">
               <li>
-                <% form_for feature_toggle do |f| %>
+                <%= form_for feature_toggle do |f| %>
                   <%= f.hidden_field :active, value: !feature_toggle.active %>
-                  <%= f.submit t(".actions.toggle") %>
+                  <%= f.submit t(".actions.toggle"), class: "button" %>
                 <% end %>
               </li>
               <li>
-                <%= link_to t(".actions.delete"), { action: :destroy, id: feature_toggle.id }, method: :delete %>
+                <%= delete_button_to t(".actions.delete"), feature_toggle_path(feature_toggle), {
+                  data: { confirm: "Are you sure?" },
+                  class: "button button-red"
+                } %>
+
               </li>
             </ul>
           </td>
