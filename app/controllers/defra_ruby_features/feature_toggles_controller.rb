@@ -6,11 +6,11 @@ module DefraRubyFeatures
     before_action :authorize_user!
 
     def index
-      if model.respond_to?(:order)
-        @feature_toggles = model.order(key: "ASC")
-      else
-        @feature_toggles = model.order_by(key: "ASC").all
-      end
+      # MongoId
+      @feature_toggles = model.order(key: "ASC") if model.respond_to?(:order)
+
+      # ActiveRecord
+      @feature_toggles = model.order_by(key: "ASC").all if model.respond_to?(:order_by)
     end
 
     def create
