@@ -16,7 +16,7 @@
           <td><%= feature_toggle.key %></th>
           <td>
             <span class="<%= feature_toggle.active ? "green_tag" : "red_tag" %>">
-              <%= feature_toggle.active %>
+              <%= feature_toggle.active ? t(".status.enabled") : t(".status.disabled") %>
             </span>
           </td>
 
@@ -42,5 +42,7 @@
     </tbody>
   </table>
 
-  <%= link_to t(".new"), new_feature_toggle_path, class: "button" %>
+  <p>
+    <%= link_to t(".new"), new_feature_toggle_path, class: "button" %>
+  </p>
 </div>

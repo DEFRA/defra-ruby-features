@@ -10,6 +10,9 @@ en:
         actions:
           toggle: "Toggle"
           delete: "Delete"
+        status:
+          enabled: "Enabled"
+          disabled: "Disabled"
       new:
         heading: "Add a new Feature Toggle"
         fields:
