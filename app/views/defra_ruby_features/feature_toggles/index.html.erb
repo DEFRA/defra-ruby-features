@@ -15,7 +15,7 @@
         <tr>
           <td><%= feature_toggle.key %></th>
           <td>
-            <span class="status-tag <%= feature_toggle.active ? "status-tag--inactive" : "status-tag--inactive" %>">
+            <span class="status-tag <%= feature_toggle.active ? "status-tag--active" : "status-tag--inactive" %>">
               <%= feature_toggle.active ? t(".status.enabled") : t(".status.disabled") %>
             </span>
           </td>
