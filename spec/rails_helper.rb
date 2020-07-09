@@ -10,9 +10,6 @@ abort("The Rails environment is running in production mode!") if Rails.env.produ
 require "rspec/rails"
 # Add additional requires below this line. Rails is not loaded until this point!
 
-# Support debugging in the tests
-require "pry-byebug"
-
 # Require this here to get factories to play nice with engine
 # require "factory_bot_rails"
 
