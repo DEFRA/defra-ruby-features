@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 require "defra_ruby_features/engine"
-require "defra_ruby_features/configuration"
 
 module DefraRubyFeatures
   # Enable the ability to configure the gem from its host app, rather than
