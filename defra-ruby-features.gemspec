@@ -17,7 +17,7 @@ Gem::Specification.new do |spec|
   spec.license     = "The Open Government Licence (OGL) Version 3"
 
   spec.test_files = Dir["spec/**/*"]
-  spec.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
+  spec.files = Dir["{app,config,db,lib}/**/*", "LICENSE", "Rakefile", "README.md"]
 
   spec.add_dependency "rails", "~> 6.0.3", ">= 6.0.3.2"
 
