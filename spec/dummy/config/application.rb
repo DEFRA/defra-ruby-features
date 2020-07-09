@@ -14,6 +14,8 @@ require "action_view/railtie"
 require "action_cable/engine"
 require "sprockets/railtie"
 require "rails/test_unit/railtie"
+require "devise"
+require "cancancan"
 
 Bundler.require(*Rails.groups)
 require "defra_ruby_features"
@@ -30,4 +32,3 @@ module Dummy
     # the framework and any gems in your application.
   end
 end
-
