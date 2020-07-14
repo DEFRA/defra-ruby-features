@@ -7,7 +7,7 @@ require "defra_ruby_features/version"
 
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
-  s.name        = "defra-ruby-features"
+  s.name        = "defra_ruby_features"
   s.version     = DefraRubyFeatures::VERSION
   s.authors     = ["Defra"]
   s.email       = ["alan.cruikshanks@environment-agency.gov.uk"]

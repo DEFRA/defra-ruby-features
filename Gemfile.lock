@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    defra-ruby-features (0.1.0)
+    defra_ruby_features (0.1.0)
       cancancan (~> 1.10)
       devise (>= 4.4.3)
       rails (~> 6.0.3, >= 6.0.3.2)
@@ -232,7 +232,7 @@ GEM
     unicode-display_width (1.7.0)
     warden (1.2.8)
       rack (>= 2.0.6)
-    websocket-driver (0.7.2)
+    websocket-driver (0.7.3)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
     zeitwerk (2.3.1)
@@ -242,7 +242,7 @@ PLATFORMS
 
 DEPENDENCIES
   database_cleaner
-  defra-ruby-features!
+  defra_ruby_features!
   defra_ruby_style
   factory_bot_rails
   github_changelog_generator
