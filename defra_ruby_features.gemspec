@@ -23,7 +23,7 @@ Gem::Specification.new do |s|
 
   # Use CanCanCan for user roles and permissions
   # Version 2.0 doesn't support Mongoid, so we're locked to an earlier one
-  s.add_dependency  "cancancan", "~> 1.10"
+  s.add_dependency  "cancancan", ">= 1.10"
 
   # Use Devise for user authentication
   s.add_dependency  "devise", ">= 4.4.3"
