@@ -22,8 +22,11 @@ Gem::Specification.new do |s|
   s.add_dependency "rails", "~> 6.0.3", ">= 6.0.3.2"
 
   # Use CanCanCan for user roles and permissions
-  # Version 2.0 doesn't support Mongoid, so we're locked to an earlier one
-  s.add_dependency  "cancancan", "~> 1.10"
+  # waste-carriers (WCR) has CanCanCan locked to v1.10. It uses MongoDb and
+  # Mongoid and CanCanCan dropped support for Mongoid in v2.
+  # WEX uses PostgreSQL and uses CanCanCan v2.3. So we know our minimum but we
+  # can't lock to a specific because we have to deal with both services.
+  s.add_dependency  "cancancan", ">= 1.10"
 
   # Use Devise for user authentication
   s.add_dependency  "devise", ">= 4.4.3"
