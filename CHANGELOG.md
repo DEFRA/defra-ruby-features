@@ -1,5 +1,13 @@
 # Changelog
 
+## [v0.1.1](https://github.com/DEFRA/defra-ruby-features/tree/v0.1.1) (2020-07-29)
+
+[Full Changelog](https://github.com/DEFRA/defra-ruby-features/compare/v0.1.0...v0.1.1)
+
+**Fixed bugs:**
+
+- Update reference to CanCanCan in gemspec [\#6](https://github.com/DEFRA/defra-ruby-features/pull/6) ([Cruikshanks](https://github.com/Cruikshanks))
+
 ## [v0.1.0](https://github.com/DEFRA/defra-ruby-features/tree/v0.1.0) (2020-07-14)
 
 [Full Changelog](https://github.com/DEFRA/defra-ruby-features/compare/e4795fb91eaf12d9a9e96f099f641e74b14645e2...v0.1.0)
