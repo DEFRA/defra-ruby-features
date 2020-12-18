@@ -1,6 +1,6 @@
 # Defra Ruby Features
 
-[![Build Status](https://travis-ci.com/DEFRA/defra-ruby-features.svg?branch=main)](https://travis-ci.com/DEFRA/defra-ruby-features)
+![Build Status](https://github.com/DEFRA/defra-ruby-features/workflows/CI/badge.svg?branch=main)
 [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=DEFRA_defra-ruby-features&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=DEFRA_defra-ruby-features)
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=DEFRA_defra-ruby-features&metric=coverage)](https://sonarcloud.io/dashboard?id=DEFRA_defra-ruby-features)
 [![security](https://hakiri.io/github/DEFRA/defra-ruby-features/main.svg)](https://hakiri.io/github/DEFRA/defra-ruby-features/main)
