@@ -1,48 +1,50 @@
-<div class="text">
-  <h1 class="heading-large"><%= t(".heading") %></h1>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l"><%= t(".heading") %></h1>
 
-  <table>
-    <thead>
-      <tr>
-        <th scope="col"><%= t(".table.key") %></th>
-        <th scope="col"><%= t(".table.status") %></th>
-        <th scope="col"></th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <% @feature_toggles.each do |feature_toggle| %>
-        <tr>
-          <td><%= feature_toggle.key %></th>
-          <td>
-            <span class="status-tag <%= feature_toggle.active ? "status-tag--active" : "status-tag--inactive" %>">
-              <%= feature_toggle.active ? t(".status.enabled") : t(".status.disabled") %>
-            </span>
-          </td>
-
-          <td>
-            <ul class="list">
-              <li>
-                <%= form_for feature_toggle do |f| %>
-                  <%= f.hidden_field :active, value: !feature_toggle.active %>
-                  <%= f.submit t(".actions.toggle"), class: "button" %>
-                <% end %>
-              </li>
-              <li>
-                <%= delete_button_to t(".actions.delete"), feature_toggle_path(feature_toggle), {
-                  data: { confirm: "Are you sure?" },
-                  class: "button button-red"
-                } %>
-
-              </li>
-            </ul>
-          </td>
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header"><%= t(".table.key") %></th>
+          <th scope="col" class="govuk-table__header"><%= t(".table.status") %></th>
+          <th scope="col" class="govuk-table__header"></th>
         </tr>
-      <% end %>
-    </tbody>
-  </table>
+      </thead>
 
-  <p>
-    <%= link_to t(".new"), new_feature_toggle_path, class: "button" %>
-  </p>
+      <tbody class="govuk-body">
+        <% @feature_toggles.each do |feature_toggle| %>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><%= feature_toggle.key %></td>
+            <td class="govuk-table__cell">
+              <span class="status-tag <%= feature_toggle.active ? "status-tag--active" : "status-tag--inactive" %>">
+                <%= feature_toggle.active ? t(".status.enabled") : t(".status.disabled") %>
+              </span>
+            </td>
+
+            <td>
+              <ul class="govuk-list">
+                <li>
+                  <%= form_for feature_toggle do |f| %>
+                    <%= f.hidden_field :active, value: !feature_toggle.active %>
+                    <%= f.submit t(".actions.toggle"), class: "govuk-button" %>
+                  <% end %>
+                </li>
+                <li>
+                  <%= delete_button_to t(".actions.delete"), feature_toggle_path(feature_toggle), {
+                    data: { confirm: "Are you sure?" },
+                    class: "govuk-button govuk-button--warning"
+                  } %>
+
+                </li>
+              </ul>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <p>
+      <%= link_to t(".new"), new_feature_toggle_path, class: "govuk-button" %>
+    </p>
+  </div>
 </div>
