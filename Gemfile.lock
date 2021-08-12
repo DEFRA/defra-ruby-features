@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    defra_ruby_features (0.1.2)
+    defra_ruby_features (0.1.3)
       cancancan (>= 1.10)
       devise (>= 4.4.3)
       rails (~> 6.0.3, >= 6.0.3.2)
