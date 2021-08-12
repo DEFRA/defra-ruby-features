@@ -1,5 +1,13 @@
 # Changelog
 
+## [v0.1.3](https://github.com/DEFRA/defra-ruby-features/tree/v0.1.3) (2021-08-12)
+
+[Full Changelog](https://github.com/DEFRA/defra-ruby-features/compare/v0.1.2...v0.1.3)
+
+**Fixed bugs:**
+
+- Fix table styling [\#42](https://github.com/DEFRA/defra-ruby-features/pull/42) ([tobyprivett](https://github.com/tobyprivett))
+
 ## [v0.1.2](https://github.com/DEFRA/defra-ruby-features/tree/v0.1.2) (2021-08-10)
 
 [Full Changelog](https://github.com/DEFRA/defra-ruby-features/compare/v0.1.1...v0.1.2)
