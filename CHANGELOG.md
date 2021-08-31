@@ -1,5 +1,15 @@
 # Changelog
 
+## [v0.1.4](https://github.com/DEFRA/defra-ruby-features/tree/v0.1.4) (2021-08-31)
+
+[Full Changelog](https://github.com/DEFRA/defra-ruby-features/compare/v0.1.3...v0.1.4)
+
+**Merged pull requests:**
+
+- Enable Rails 6.0/1 [\#46](https://github.com/DEFRA/defra-ruby-features/pull/46) ([tobyprivett](https://github.com/tobyprivett))
+- Bump rails from 6.0.4 to 6.0.4.1 [\#44](https://github.com/DEFRA/defra-ruby-features/pull/44) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump rspec-rails from 5.0.1 to 5.0.2 [\#43](https://github.com/DEFRA/defra-ruby-features/pull/43) ([dependabot[bot]](https://github.com/apps/dependabot))
+
 ## [v0.1.3](https://github.com/DEFRA/defra-ruby-features/tree/v0.1.3) (2021-08-12)
 
 [Full Changelog](https://github.com/DEFRA/defra-ruby-features/compare/v0.1.2...v0.1.3)
