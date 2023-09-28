@@ -3,12 +3,12 @@
 require "rails_helper"
 
 module DefraRubyFeatures
-  RSpec.describe "FeatureToggle", type: :request do
+  RSpec.describe "FeatureToggle" do
     let(:user) { create(:user) }
 
-    context "GET /feature-toggles" do
+    context "with GET /feature-toggles" do
       context "when a user is authenticated" do
-        before(:each) do
+        before do
           sign_in(user)
         end
 
@@ -19,7 +19,7 @@ module DefraRubyFeatures
           get "/feature-toggles"
 
           expect(response.body).to include(key)
-          expect(response).to have_http_status(200)
+          expect(response).to have_http_status(:ok)
           expect(response).to render_template(:index)
         end
       end
@@ -28,14 +28,14 @@ module DefraRubyFeatures
         it "redirects away" do
           get "/feature-toggles"
 
-          expect(response).to have_http_status(302)
+          expect(response).to have_http_status(:found)
         end
       end
     end
 
-    context "POST /feature-toggles" do
+    context "with POST /feature-toggles" do
       context "when a user is authenticated" do
-        before(:each) do
+        before do
           sign_in(user)
         end
 
@@ -49,7 +49,7 @@ module DefraRubyFeatures
           expect(feature_toggle.key).to eq("test")
           expect(feature_toggle).to be_active
           expect(FeatureToggle.count).to eq(count + 1)
-          expect(response).to have_http_status(302)
+          expect(response).to have_http_status(:found)
           expect(response).to redirect_to("/feature-toggles")
         end
       end
@@ -58,16 +58,16 @@ module DefraRubyFeatures
         it "redirects away" do
           post "/feature-toggles"
 
-          expect(response).to have_http_status(302)
+          expect(response).to have_http_status(:found)
         end
       end
     end
 
-    context "PUT/PATCH /feature-toggles/:id" do
+    context "with PUT/PATCH /feature-toggles/:id" do
       let(:feature_toggle) { create(:feature_toggle, active: false) }
 
       context "when a user is authenticated" do
-        before(:each) do
+        before do
           sign_in(user)
         end
 
@@ -77,7 +77,7 @@ module DefraRubyFeatures
           feature_toggle.reload
 
           expect(feature_toggle).to be_active
-          expect(response).to have_http_status(302)
+          expect(response).to have_http_status(:found)
           expect(response).to redirect_to("/feature-toggles")
         end
       end
@@ -86,14 +86,14 @@ module DefraRubyFeatures
         it "redirects away" do
           put "/feature-toggles/#{feature_toggle.id}"
 
-          expect(response).to have_http_status(302)
+          expect(response).to have_http_status(:found)
         end
       end
     end
 
-    context "GET /feature-toggles/new" do
+    context "with GET /feature-toggles/new" do
       context "when a user is authenticated" do
-        before(:each) do
+        before do
           sign_in(user)
         end
 
@@ -101,7 +101,7 @@ module DefraRubyFeatures
           get "/feature-toggles/new"
 
           expect(response).to render_template(:new)
-          expect(response).to have_http_status(200)
+          expect(response).to have_http_status(:ok)
         end
       end
 
@@ -109,16 +109,16 @@ module DefraRubyFeatures
         it "redirects away" do
           get "/feature-toggles/new"
 
-          expect(response).to have_http_status(302)
+          expect(response).to have_http_status(:found)
         end
       end
     end
 
-    context "DELETE /feature-toggles/:id" do
+    context "with DELETE /feature-toggles/:id" do
       let!(:feature_toggle) { create(:feature_toggle) }
 
       context "when there is a user authenticated" do
-        before(:each) do
+        before do
           sign_in(user)
         end
 
@@ -128,7 +128,7 @@ module DefraRubyFeatures
           delete "/feature-toggles/#{feature_toggle.id}"
 
           expect(FeatureToggle.count).to eq(count - 1)
-          expect(response).to have_http_status(302)
+          expect(response).to have_http_status(:found)
           expect(response).to redirect_to("/feature-toggles")
         end
       end
@@ -137,7 +137,7 @@ module DefraRubyFeatures
         it "redirects away" do
           delete "/feature-toggles/#{feature_toggle.id}"
 
-          expect(response).to have_http_status(302)
+          expect(response).to have_http_status(:found)
         end
       end
     end

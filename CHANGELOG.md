@@ -1,5 +1,15 @@
 # Changelog
 
+## [Unreleased](https://github.com/DEFRA/defra-ruby-features/tree/HEAD)
+
+[Full Changelog](https://github.com/DEFRA/defra-ruby-features/compare/v0.1.4...HEAD)
+
+**Merged pull requests:**
+
+- Update gems and remove rails pin [\#108](https://github.com/DEFRA/defra-ruby-features/pull/108) ([PaulDoyle-DEFRA](https://github.com/PaulDoyle-DEFRA))
+- Bump nokogiri from 1.12.4 to 1.12.5 [\#48](https://github.com/DEFRA/defra-ruby-features/pull/48) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump rails from 6.0.4.1 to 6.1.4.1 [\#47](https://github.com/DEFRA/defra-ruby-features/pull/47) ([dependabot[bot]](https://github.com/apps/dependabot))
+
 ## [v0.1.4](https://github.com/DEFRA/defra-ruby-features/tree/v0.1.4) (2021-08-31)
 
 [Full Changelog](https://github.com/DEFRA/defra-ruby-features/compare/v0.1.3...v0.1.4)

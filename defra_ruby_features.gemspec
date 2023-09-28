@@ -15,11 +15,14 @@ Gem::Specification.new do |s|
   s.summary     = "Defra Ruby on Rails features manager engine"
   s.description = "A Rails engine which can be used to activate and deactivate feature toggles"
   s.license     = "The Open Government Licence (OGL) Version 3"
+  s.required_ruby_version = ">= 3.1"
+  s.metadata["rubygems_mfa_required"] = "true"
 
   s.files = Dir["{app,config,db,lib}/**/*", "LICENSE", "Rakefile", "README.md"]
-  s.test_files = Dir["spec/**/*"]
 
-  s.add_dependency "rails", "~> 6.0"
+  # let the apps determine the rails version
+  s.add_dependency "rails"
+  s.add_dependency "sprockets-rails"
 
   # Use CanCanCan for user roles and permissions
   # waste-carriers (WCR) has CanCanCan locked to v1.10. It uses MongoDb and
@@ -29,22 +32,5 @@ Gem::Specification.new do |s|
   s.add_dependency  "cancancan", ">= 1.10"
 
   # Use Devise for user authentication
-  s.add_dependency  "devise", ">= 4.4.3"
-
-  # Allows us to automatically generate the change log from the tags, issues,
-  # labels and pull requests on GitHub. Added as a dependency so all dev's have
-  # access to it to generate a log, and so they are using the same version.
-  # New dev's should first create GitHub personal app token and add it to their
-  # ~/.bash_profile (or equivalent)
-  # https://github.com/skywinder/github-changelog-generator#github-token
-  s.add_development_dependency "github_changelog_generator"
-
-  s.add_development_dependency "database_cleaner"
-  s.add_development_dependency "defra_ruby_style"
-  s.add_development_dependency "factory_bot_rails"
-  s.add_development_dependency "pry-byebug"
-  s.add_development_dependency "rails-controller-testing"
-  s.add_development_dependency "rspec-rails"
-  s.add_development_dependency "simplecov", "~> 0.17.1"
-  s.add_development_dependency "sqlite3"
+  s.add_dependency  "devise", ">= 4.9"
 end
